@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account and Data Deletion - QUICK MATH FLASH</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Noto Sans CJK', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        .language-toggle {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .language-toggle select {
+            background: #3B82F6;
+            color: white;
+            border: 2px solid #3B82F6;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            outline: none;
+        }
+        .language-toggle select:hover {
+            background: #2563EB;
+            border-color: #2563EB;
+        }
+        .language-toggle select:focus {
+            border-color: #1D4ED8;
+        }
+        .language-toggle select option {
+            background: white;
+            color: #333;
+        }
+        h1 {
+            color: #1F2937;
+            border-bottom: 3px solid #EF4444;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #374151;
+            margin-top: 30px;
+        }
+        .lang-section {
+            display: none;
+        }
+        .lang-section.active {
+            display: block;
+        }
+        .app-info {
+            background: #FEF2F2;
+            border-left: 4px solid #EF4444;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box {
+            background: #FEF3C7;
+            border: 2px solid #F59E0B;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .warning-box strong {
+            color: #B45309;
+        }
+        .contact-box {
+            background: #DBEAFE;
+            border-left: 4px solid #3B82F6;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .contact-box h3 {
+            margin-top: 0;
+            color: #1E40AF;
+        }
+        .email-link {
+            background: #3B82F6;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 10px 0;
+            font-weight: 500;
+        }
+        .email-link:hover {
+            background: #2563EB;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .data-table th,
+        .data-table td {
+            border: 1px solid #D1D5DB;
+            padding: 12px;
+            text-align: left;
+        }
+        .data-table th {
+            background: #F3F4F6;
+            font-weight: 600;
+        }
+        .delete-icon {
+            color: #EF4444;
+        }
+        .keep-icon {
+            color: #10B981;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-toggle">
+        <select id="language-select" onchange="switchLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="zh">简体中文</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="ko">한국어</option>
+        </select>
+    </div>
+
+    <!-- Japanese Version -->
+    <div id="ja-content" class="lang-section">
+        <h1>アカウントとデータの削除</h1>
+
+        <div class="app-info">
+            <strong>アプリ名：</strong>QUICK MATH FLASH<br>
+            <strong>開発元：</strong>1UP PixelWorks
+        </div>
+
+        <h2>アカウント削除の手順</h2>
+        <p>QUICK MATH FLASHのアカウントとすべての関連データを削除したい場合は、以下の手順に従ってください。</p>
+
+        <div class="contact-box">
+            <h3>削除リクエスト方法</h3>
+            <p>以下のメールアドレスに削除リクエストを送信してください：</p>
+            <a href="mailto:uppixelworks@gmail.com?subject=QUICK MATH FLASH - アカウント削除リクエスト&body=アカウント削除を希望します。%0D%0A%0D%0A【必要情報】%0D%0A表示名：%0D%0A（アプリで使用している表示名を記入してください）" class="email-link">uppixelworks@gmail.com</a>
+
+            <p><strong>メール件名：</strong>QUICK MATH FLASH - アカウント削除リクエスト</p>
+            <p><strong>記載内容：</strong></p>
+            <ul>
+                <li>アカウント削除を希望する旨</li>
+                <li>アプリで使用している表示名</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ 重要：</strong>アカウントを削除すると、以下のデータが完全に削除され、復元できません。この操作は取り消せません。
+        </div>
+
+        <h2>削除されるデータ</h2>
+        <table class="data-table">
+            <tr>
+                <th>データの種類</th>
+                <th>削除/保持</th>
+                <th>説明</th>
+            </tr>
+            <tr>
+                <td>アカウント情報</td>
+                <td><span class="delete-icon">✗ 削除</span></td>
+                <td>Firebase認証アカウント</td>
+            </tr>
+            <tr>
+                <td>プロフィール情報</td>
+                <td><span class="delete-icon">✗ 削除</span></td>
+                <td>表示名</td>
+            </tr>
+            <tr>
+                <td>ゲームデータ</td>
+                <td><span class="delete-icon">✗ 削除</span></td>
+                <td>すべてのスコア、統計情報、プレイ履歴</td>
+            </tr>
+            <tr>
+                <td>ランキングデータ</td>
+                <td><span class="delete-icon">✗ 削除</span></td>
+                <td>すべてのランキング記録</td>
+            </tr>
+            <tr>
+                <td>設定情報</td>
+                <td><span class="delete-icon">✗ 削除</span></td>
+                <td>言語設定、ゲーム設定</td>
+            </tr>
+            <tr>
+                <td>購入履歴</td>
+                <td><span class="keep-icon">✓ 保持</span></td>
+                <td>Google Play請求サービスに保存（税法・返金対応のため最大7年間保持）</td>
+            </tr>
+        </table>
+
+        <h2>削除処理の期間</h2>
+        <ul>
+            <li><strong>削除リクエスト受領後：</strong>7営業日以内に処理を完了</li>
+            <li><strong>完了通知：</strong>削除完了後、メールで通知</li>
+            <li><strong>購入履歴：</strong>Google Playの規約により、最大7年間保持される場合があります（税法・返金処理のため）</li>
+        </ul>
+
+        <h2>削除後の影響</h2>
+        <ul>
+            <li>アプリへのログインができなくなります</li>
+            <li>すべてのゲーム進捗が失われます</li>
+            <li>ランキングから名前が削除されます</li>
+            <li>プレミアムプランの特典が利用できなくなります（返金はありません）</li>
+            <li>再度アプリを使用する場合は、新しいアカウントの作成が必要です</li>
+        </ul>
+
+        <h2>お問い合わせ</h2>
+        <p>削除に関するご質問がある場合は、以下までご連絡ください：</p>
+        <p><strong>開発元：</strong>1UP PixelWorks<br>
+        <strong>メール：</strong>uppixelworks@gmail.com</p>
+    </div>
+
+    <!-- English Version -->
+    <div id="en-content" class="lang-section active">
+        <h1>Account and Data Deletion</h1>
+
+        <div class="app-info">
+            <strong>App Name:</strong> QUICK MATH FLASH<br>
+            <strong>Developer:</strong> 1UP PixelWorks
+        </div>
+
+        <h2>How to Delete Your Account</h2>
+        <p>If you wish to delete your QUICK MATH FLASH account and all associated data, please follow these steps.</p>
+
+        <div class="contact-box">
+            <h3>Deletion Request Method</h3>
+            <p>Send a deletion request to the following email address:</p>
+            <a href="mailto:uppixelworks@gmail.com?subject=QUICK MATH FLASH - Account Deletion Request&body=I would like to delete my account.%0D%0A%0D%0A[Required Information]%0D%0ADisplay Name:%0D%0A(Please provide your display name used in the app)" class="email-link">uppixelworks@gmail.com</a>
+
+            <p><strong>Email Subject:</strong> QUICK MATH FLASH - Account Deletion Request</p>
+            <p><strong>Include:</strong></p>
+            <ul>
+                <li>Statement that you wish to delete your account</li>
+                <li>Your display name used in the app</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ Important:</strong> Deleting your account will permanently remove the following data and cannot be recovered. This action is irreversible.
+        </div>
+
+        <h2>Data to be Deleted</h2>
+        <table class="data-table">
+            <tr>
+                <th>Data Type</th>
+                <th>Deleted/Retained</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Account Information</td>
+                <td><span class="delete-icon">✗ Deleted</span></td>
+                <td>Firebase authentication account</td>
+            </tr>
+            <tr>
+                <td>Profile Information</td>
+                <td><span class="delete-icon">✗ Deleted</span></td>
+                <td>Display name</td>
+            </tr>
+            <tr>
+                <td>Game Data</td>
+                <td><span class="delete-icon">✗ Deleted</span></td>
+                <td>All scores, statistics, and play history</td>
+            </tr>
+            <tr>
+                <td>Ranking Data</td>
+                <td><span class="delete-icon">✗ Deleted</span></td>
+                <td>All ranking records</td>
+            </tr>
+            <tr>
+                <td>Settings</td>
+                <td><span class="delete-icon">✗ Deleted</span></td>
+                <td>Language settings, game preferences</td>
+            </tr>
+            <tr>
+                <td>Purchase History</td>
+                <td><span class="keep-icon">✓ Retained</span></td>
+                <td>Stored by Google Play Billing (retained up to 7 years for tax and refund purposes)</td>
+            </tr>
+        </table>
+
+        <h2>Deletion Timeline</h2>
+        <ul>
+            <li><strong>After receiving request:</strong> Completed within 7 business days</li>
+            <li><strong>Completion notice:</strong> Email notification sent upon completion</li>
+            <li><strong>Purchase history:</strong> May be retained up to 7 years per Google Play requirements (for tax and refund processing)</li>
+        </ul>
+
+        <h2>Impact After Deletion</h2>
+        <ul>
+            <li>You will no longer be able to log into the app</li>
+            <li>All game progress will be lost</li>
+            <li>Your name will be removed from rankings</li>
+            <li>Premium plan benefits will no longer be available (no refunds)</li>
+            <li>To use the app again, you will need to create a new account</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>If you have questions about deletion, please contact:</p>
+        <p><strong>Developer:</strong> 1UP PixelWorks<br>
+        <strong>Email:</strong> uppixelworks@gmail.com</p>
+    </div>
+
+    <!-- Chinese Simplified Version -->
+    <div id="zh-content" class="lang-section">
+        <h1>账户和数据删除</h1>
+
+        <div class="app-info">
+            <strong>应用名称：</strong>QUICK MATH FLASH<br>
+            <strong>开发者：</strong>1UP PixelWorks
+        </div>
+
+        <h2>如何删除您的账户</h2>
+        <p>如果您希望删除QUICK MATH FLASH账户及所有相关数据，请按照以下步骤操作。</p>
+
+        <div class="contact-box">
+            <h3>删除请求方法</h3>
+            <p>向以下电子邮件地址发送删除请求：</p>
+            <a href="mailto:uppixelworks@gmail.com?subject=QUICK MATH FLASH - 账户删除请求&body=我希望删除我的账户。%0D%0A%0D%0A【必需信息】%0D%0A显示名称：%0D%0A（请提供您在应用中使用的显示名称）" class="email-link">uppixelworks@gmail.com</a>
+
+            <p><strong>邮件主题：</strong>QUICK MATH FLASH - 账户删除请求</p>
+            <p><strong>包含内容：</strong></p>
+            <ul>
+                <li>说明您希望删除账户</li>
+                <li>您在应用中使用的显示名称</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ 重要：</strong>删除账户将永久删除以下数据，无法恢复。此操作不可逆转。
+        </div>
+
+        <h2>将被删除的数据</h2>
+        <table class="data-table">
+            <tr>
+                <th>数据类型</th>
+                <th>删除/保留</th>
+                <th>说明</th>
+            </tr>
+            <tr>
+                <td>账户信息</td>
+                <td><span class="delete-icon">✗ 删除</span></td>
+                <td>Firebase认证账户</td>
+            </tr>
+            <tr>
+                <td>个人资料信息</td>
+                <td><span class="delete-icon">✗ 删除</span></td>
+                <td>显示名称</td>
+            </tr>
+            <tr>
+                <td>游戏数据</td>
+                <td><span class="delete-icon">✗ 删除</span></td>
+                <td>所有分数、统计信息和游戏历史</td>
+            </tr>
+            <tr>
+                <td>排名数据</td>
+                <td><span class="delete-icon">✗ 删除</span></td>
+                <td>所有排名记录</td>
+            </tr>
+            <tr>
+                <td>设置信息</td>
+                <td><span class="delete-icon">✗ 删除</span></td>
+                <td>语言设置、游戏偏好</td>
+            </tr>
+            <tr>
+                <td>购买历史</td>
+                <td><span class="keep-icon">✓ 保留</span></td>
+                <td>由Google Play结算保存（为税务和退款目的保留最多7年）</td>
+            </tr>
+        </table>
+
+        <h2>删除时间表</h2>
+        <ul>
+            <li><strong>收到请求后：</strong>7个工作日内完成</li>
+            <li><strong>完成通知：</strong>完成后发送电子邮件通知</li>
+            <li><strong>购买历史：</strong>根据Google Play要求可能保留最多7年（用于税务和退款处理）</li>
+        </ul>
+
+        <h2>删除后的影响</h2>
+        <ul>
+            <li>您将无法再登录应用</li>
+            <li>所有游戏进度将丢失</li>
+            <li>您的名字将从排名中删除</li>
+            <li>高级计划福利将不再可用（不退款）</li>
+            <li>要再次使用应用，您需要创建新账户</li>
+        </ul>
+
+        <h2>联系方式</h2>
+        <p>如有关于删除的问题，请联系：</p>
+        <p><strong>开发者：</strong>1UP PixelWorks<br>
+        <strong>电子邮件：</strong>uppixelworks@gmail.com</p>
+    </div>
+
+    <!-- Chinese Traditional Version -->
+    <div id="zh-tw-content" class="lang-section">
+        <h1>帳戶和資料刪除</h1>
+
+        <div class="app-info">
+            <strong>應用程式名稱：</strong>QUICK MATH FLASH<br>
+            <strong>開發者：</strong>1UP PixelWorks
+        </div>
+
+        <h2>如何刪除您的帳戶</h2>
+        <p>如果您希望刪除QUICK MATH FLASH帳戶及所有相關資料，請按照以下步驟操作。</p>
+
+        <div class="contact-box">
+            <h3>刪除請求方法</h3>
+            <p>向以下電子郵件地址發送刪除請求：</p>
+            <a href="mailto:uppixelworks@gmail.com?subject=QUICK MATH FLASH - 帳戶刪除請求&body=我希望刪除我的帳戶。%0D%0A%0D%0A【必需資訊】%0D%0A顯示名稱：%0D%0A（請提供您在應用程式中使用的顯示名稱）" class="email-link">uppixelworks@gmail.com</a>
+
+            <p><strong>郵件主旨：</strong>QUICK MATH FLASH - 帳戶刪除請求</p>
+            <p><strong>包含內容：</strong></p>
+            <ul>
+                <li>說明您希望刪除帳戶</li>
+                <li>您在應用程式中使用的顯示名稱</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ 重要：</strong>刪除帳戶將永久刪除以下資料，無法恢復。此操作不可逆轉。
+        </div>
+
+        <h2>將被刪除的資料</h2>
+        <table class="data-table">
+            <tr>
+                <th>資料類型</th>
+                <th>刪除/保留</th>
+                <th>說明</th>
+            </tr>
+            <tr>
+                <td>帳戶資訊</td>
+                <td><span class="delete-icon">✗ 刪除</span></td>
+                <td>Firebase認證帳戶</td>
+            </tr>
+            <tr>
+                <td>個人資料資訊</td>
+                <td><span class="delete-icon">✗ 刪除</span></td>
+                <td>顯示名稱</td>
+            </tr>
+            <tr>
+                <td>遊戲資料</td>
+                <td><span class="delete-icon">✗ 刪除</span></td>
+                <td>所有分數、統計資訊和遊戲歷史</td>
+            </tr>
+            <tr>
+                <td>排名資料</td>
+                <td><span class="delete-icon">✗ 刪除</span></td>
+                <td>所有排名記錄</td>
+            </tr>
+            <tr>
+                <td>設定資訊</td>
+                <td><span class="delete-icon">✗ 刪除</span></td>
+                <td>語言設定、遊戲偏好</td>
+            </tr>
+            <tr>
+                <td>購買歷史</td>
+                <td><span class="keep-icon">✓ 保留</span></td>
+                <td>由Google Play結帳保存（為稅務和退款目的保留最多7年）</td>
+            </tr>
+        </table>
+
+        <h2>刪除時間表</h2>
+        <ul>
+            <li><strong>收到請求後：</strong>7個工作日內完成</li>
+            <li><strong>完成通知：</strong>完成後發送電子郵件通知</li>
+            <li><strong>購買歷史：</strong>根據Google Play要求可能保留最多7年（用於稅務和退款處理）</li>
+        </ul>
+
+        <h2>刪除後的影響</h2>
+        <ul>
+            <li>您將無法再登入應用程式</li>
+            <li>所有遊戲進度將遺失</li>
+            <li>您的名字將從排名中刪除</li>
+            <li>高級方案福利將不再可用（不退款）</li>
+            <li>要再次使用應用程式，您需要建立新帳戶</li>
+        </ul>
+
+        <h2>聯絡方式</h2>
+        <p>如有關於刪除的問題，請聯絡：</p>
+        <p><strong>開發者：</strong>1UP PixelWorks<br>
+        <strong>電子郵件：</strong>uppixelworks@gmail.com</p>
+    </div>
+
+    <!-- Korean Version -->
+    <div id="ko-content" class="lang-section">
+        <h1>계정 및 데이터 삭제</h1>
+
+        <div class="app-info">
+            <strong>앱 이름:</strong> QUICK MATH FLASH<br>
+            <strong>개발자:</strong> 1UP PixelWorks
+        </div>
+
+        <h2>계정 삭제 방법</h2>
+        <p>QUICK MATH FLASH 계정과 모든 관련 데이터를 삭제하려면 다음 단계를 따르세요.</p>
+
+        <div class="contact-box">
+            <h3>삭제 요청 방법</h3>
+            <p>다음 이메일 주소로 삭제 요청을 보내주세요:</p>
+            <a href="mailto:uppixelworks@gmail.com?subject=QUICK MATH FLASH - 계정 삭제 요청&body=제 계정을 삭제하고 싶습니다.%0D%0A%0D%0A【필수 정보】%0D%0A표시 이름:%0D%0A(앱에서 사용한 표시 이름을 입력해주세요)" class="email-link">uppixelworks@gmail.com</a>
+
+            <p><strong>이메일 제목:</strong> QUICK MATH FLASH - 계정 삭제 요청</p>
+            <p><strong>포함 내용:</strong></p>
+            <ul>
+                <li>계정 삭제를 원한다는 내용</li>
+                <li>앱에서 사용한 표시 이름</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <strong>⚠️ 중요:</strong> 계정을 삭제하면 다음 데이터가 영구적으로 삭제되며 복구할 수 없습니다. 이 작업은 취소할 수 없습니다.
+        </div>
+
+        <h2>삭제될 데이터</h2>
+        <table class="data-table">
+            <tr>
+                <th>데이터 유형</th>
+                <th>삭제/보관</th>
+                <th>설명</th>
+            </tr>
+            <tr>
+                <td>계정 정보</td>
+                <td><span class="delete-icon">✗ 삭제</span></td>
+                <td>Firebase 인증 계정</td>
+            </tr>
+            <tr>
+                <td>프로필 정보</td>
+                <td><span class="delete-icon">✗ 삭제</span></td>
+                <td>표시 이름</td>
+            </tr>
+            <tr>
+                <td>게임 데이터</td>
+                <td><span class="delete-icon">✗ 삭제</span></td>
+                <td>모든 점수, 통계 정보 및 플레이 기록</td>
+            </tr>
+            <tr>
+                <td>순위 데이터</td>
+                <td><span class="delete-icon">✗ 삭제</span></td>
+                <td>모든 순위 기록</td>
+            </tr>
+            <tr>
+                <td>설정 정보</td>
+                <td><span class="delete-icon">✗ 삭제</span></td>
+                <td>언어 설정, 게임 환경설정</td>
+            </tr>
+            <tr>
+                <td>구매 기록</td>
+                <td><span class="keep-icon">✓ 보관</span></td>
+                <td>Google Play 결제에 저장 (세금 및 환불 목적으로 최대 7년 보관)</td>
+            </tr>
+        </table>
+
+        <h2>삭제 일정</h2>
+        <ul>
+            <li><strong>요청 접수 후:</strong> 7영업일 이내 완료</li>
+            <li><strong>완료 알림:</strong> 완료 시 이메일 알림 발송</li>
+            <li><strong>구매 기록:</strong> Google Play 요구사항에 따라 최대 7년 보관될 수 있음 (세금 및 환불 처리용)</li>
+        </ul>
+
+        <h2>삭제 후 영향</h2>
+        <ul>
+            <li>더 이상 앱에 로그인할 수 없습니다</li>
+            <li>모든 게임 진행 상황이 손실됩니다</li>
+            <li>순위에서 이름이 삭제됩니다</li>
+            <li>프리미엄 플랜 혜택을 더 이상 사용할 수 없습니다 (환불 없음)</li>
+            <li>앱을 다시 사용하려면 새 계정을 만들어야 합니다</li>
+        </ul>
+
+        <h2>연락처</h2>
+        <p>삭제에 관한 질문이 있으시면 문의하세요:</p>
+        <p><strong>개발자:</strong> 1UP PixelWorks<br>
+        <strong>이메일:</strong> uppixelworks@gmail.com</p>
+    </div>
+
+    <script>
+        function switchLanguage(lang) {
+            // Hide all sections
+            document.querySelectorAll('.lang-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(lang + '-content').classList.add('active');
+
+            // Update select dropdown
+            document.getElementById('language-select').value = lang;
+        }
+
+        // Auto-detect browser language on page load
+        function detectAndSetLanguage() {
+            // Get browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+
+            // Map browser language codes to our language codes
+            let targetLang = 'en'; // Default to English
+
+            if (browserLang.startsWith('ja')) {
+                targetLang = 'ja';
+            } else if (browserLang.startsWith('zh')) {
+                // Distinguish between Simplified and Traditional Chinese
+                if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO')) {
+                    targetLang = 'zh-tw';
+                } else {
+                    targetLang = 'zh';
+                }
+            } else if (browserLang.startsWith('ko')) {
+                targetLang = 'ko';
+            } else if (browserLang.startsWith('en')) {
+                targetLang = 'en';
+            }
+
+            // Switch to detected language
+            switchLanguage(targetLang);
+        }
+
+        // Run auto-detection when page loads
+        window.addEventListener('DOMContentLoaded', detectAndSetLanguage);
+    </script>
+</body>
+</html>
