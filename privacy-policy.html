@@ -16,25 +16,28 @@
         .language-toggle {
             text-align: right;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: flex-end;
-            flex-wrap: wrap;
-            gap: 8px;
         }
-        .language-toggle button {
+        .language-toggle select {
             background: #3B82F6;
             color: white;
-            border: none;
+            border: 2px solid #3B82F6;
             padding: 8px 16px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 500;
+            outline: none;
         }
-        .language-toggle button:hover {
+        .language-toggle select:hover {
             background: #2563EB;
+            border-color: #2563EB;
         }
-        .language-toggle button.active {
-            background: #1D4ED8;
+        .language-toggle select:focus {
+            border-color: #1D4ED8;
+        }
+        .language-toggle select option {
+            background: white;
+            color: #333;
         }
         h1 {
             color: #1F2937;
@@ -75,11 +78,13 @@
 </head>
 <body>
     <div class="language-toggle">
-        <button onclick="switchLanguage('ja')" id="btn-ja" class="active">日本語</button>
-        <button onclick="switchLanguage('en')" id="btn-en">English</button>
-        <button onclick="switchLanguage('zh')" id="btn-zh">简体中文</button>
-        <button onclick="switchLanguage('zh-tw')" id="btn-zh-tw">繁體中文</button>
-        <button onclick="switchLanguage('ko')" id="btn-ko">한국어</button>
+        <select id="language-select" onchange="switchLanguage(this.value)">
+            <option value="ja">日本語</option>
+            <option value="en">English</option>
+            <option value="zh">简体中文</option>
+            <option value="zh-tw">繁體中文</option>
+            <option value="ko">한국어</option>
+        </select>
     </div>
 
     <!-- Japanese Version -->
@@ -494,16 +499,8 @@
                 section.classList.remove('active');
             });
 
-            // Remove active class from all buttons
-            document.querySelectorAll('.language-toggle button').forEach(btn => {
-                btn.classList.remove('active');
-            });
-
             // Show selected section
             document.getElementById(lang + '-content').classList.add('active');
-
-            // Add active class to selected button
-            document.getElementById('btn-' + lang).classList.add('active');
         }
     </script>
 </body>
