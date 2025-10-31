@@ -79,8 +79,8 @@
 <body>
     <div class="language-toggle">
         <select id="language-select" onchange="switchLanguage(this.value)">
-            <option value="ja">日本語</option>
             <option value="en">English</option>
+            <option value="ja">日本語</option>
             <option value="zh">简体中文</option>
             <option value="zh-tw">繁體中文</option>
             <option value="ko">한국어</option>
@@ -88,7 +88,7 @@
     </div>
 
     <!-- Japanese Version -->
-    <div id="ja-content" class="lang-section active">
+    <div id="ja-content" class="lang-section">
         <h1>プライバシーポリシー</h1>
         <p class="update-date">最終更新日: 2025年10月31日</p>
 
@@ -169,7 +169,7 @@
     </div>
 
     <!-- English Version -->
-    <div id="en-content" class="lang-section">
+    <div id="en-content" class="lang-section active">
         <h1>Privacy Policy</h1>
         <p class="update-date">Last Updated: October 31, 2025</p>
 
@@ -501,7 +501,40 @@
 
             // Show selected section
             document.getElementById(lang + '-content').classList.add('active');
+
+            // Update select dropdown
+            document.getElementById('language-select').value = lang;
         }
+
+        // Auto-detect browser language on page load
+        function detectAndSetLanguage() {
+            // Get browser language
+            const browserLang = navigator.language || navigator.userLanguage;
+
+            // Map browser language codes to our language codes
+            let targetLang = 'en'; // Default to English
+
+            if (browserLang.startsWith('ja')) {
+                targetLang = 'ja';
+            } else if (browserLang.startsWith('zh')) {
+                // Distinguish between Simplified and Traditional Chinese
+                if (browserLang.includes('TW') || browserLang.includes('HK') || browserLang.includes('MO')) {
+                    targetLang = 'zh-tw';
+                } else {
+                    targetLang = 'zh';
+                }
+            } else if (browserLang.startsWith('ko')) {
+                targetLang = 'ko';
+            } else if (browserLang.startsWith('en')) {
+                targetLang = 'en';
+            }
+
+            // Switch to detected language
+            switchLanguage(targetLang);
+        }
+
+        // Run auto-detection when page loads
+        window.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
 </body>
 </html>
